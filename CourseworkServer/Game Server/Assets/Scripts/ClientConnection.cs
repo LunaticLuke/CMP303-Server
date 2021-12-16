@@ -22,6 +22,7 @@ public class ClientConnection
 
     public string username;
 
+
     public ClientConnection(int _clientId)
     {
         //Initialise the ID within the constructor
