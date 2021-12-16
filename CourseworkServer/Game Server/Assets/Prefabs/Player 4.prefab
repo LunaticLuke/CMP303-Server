@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 618505921367045117}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &618505921367045117
 Rigidbody2D:
   serializedVersion: 4
@@ -245,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1542029166999290648}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &1542029166999290648
 Rigidbody2D:
   serializedVersion: 4
@@ -391,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 8007026450650249953}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &8007026450650249953
 Rigidbody2D:
   serializedVersion: 4
@@ -537,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 5419685292826352689}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &5419685292826352689
 Rigidbody2D:
   serializedVersion: 4
@@ -713,6 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 8523375993949003067}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &8523375993949003067
 Rigidbody2D:
   serializedVersion: 4
@@ -859,6 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 8413786313380092984}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &8413786313380092984
 Rigidbody2D:
   serializedVersion: 4
@@ -1005,6 +1011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 799365804333097300}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &799365804333097300
 Rigidbody2D:
   serializedVersion: 4
@@ -1067,7 +1074,7 @@ GameObject:
   - component: {fileID: 5419939351463221067}
   m_Layer: 0
   m_Name: Player 4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,10 +1159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 0
-  inputArray:
-  - 0
-  - 0
-  - 0
   positionArray:
   - 0
   - 0
@@ -1164,6 +1167,7 @@ MonoBehaviour:
   differenceInTime: 0
   hasServerUpdate: 0
   lastSentMessages: []
+  zRot: 0
   bullets:
   - {fileID: 7040069680476815926}
   - {fileID: 1237435156988012297}
@@ -1323,6 +1327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 1946794773930685087}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &1946794773930685087
 Rigidbody2D:
   serializedVersion: 4
@@ -1469,6 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 3362331045094310443}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &3362331045094310443
 Rigidbody2D:
   serializedVersion: 4
@@ -1615,6 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 8732238932414984754}
   simulating: 0
+  idOfPlayer: 0
 --- !u!50 &8732238932414984754
 Rigidbody2D:
   serializedVersion: 4

@@ -16,7 +16,14 @@ public class Bullet : MonoBehaviour
 
     float speed = 5;
 
+    public int idOfPlayer;
 
+    public  struct collisionInfo
+    {
+        public float timestamp;
+        public int idOfPlayer;
+        public int idOfZombie;
+    }
     
 
     // Start is called before the first frame update
@@ -42,11 +49,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if(collision.transform.tag == "Enemy")
         {
             simulating = false;
             gameObject.SetActive(false);
-            //Either Take Health Or Kill
         }
 
         if (collision.transform.tag == "Wall")
@@ -54,6 +60,22 @@ public class Bullet : MonoBehaviour
             simulating = false;
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            simulating = false;
+            gameObject.SetActive(false);
+            collisionInfo data;
+            data.timestamp = Server.instance.gameTime;
+            data.idOfPlayer = idOfPlayer;
+            data.idOfZombie = collision.gameObject.GetComponent<AIZombie>().id;
+            GameManager.instance.collisions.Add(data);
+            Debug.Log("Hit Zombie");
+        }
+        
     }
 
     public void Fire(Vector2 origin, Vector2 _dir)

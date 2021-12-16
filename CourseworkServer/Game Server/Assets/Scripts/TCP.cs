@@ -142,7 +142,6 @@ public class TCP
 
                     break;
                 case 'p':
-                   
                     float xValue = BitConverter.ToSingle(_data, 2);
                     float yValue = BitConverter.ToSingle(_data, 6);
                     float gameTime = BitConverter.ToSingle(_data, 10);
@@ -156,7 +155,18 @@ public class TCP
 
                     break;
                 case 'z':
-                        
+                    float timeStamp = BitConverter.ToSingle(_data, 2);
+                    int idOfZombie = BitConverter.ToInt32(_data, 6);
+                    //Debug.Log(string.Format("Id Of Zombie: {0} TimeStamp: {1}", idOfZombie, timeStamp));
+                    bool collided = GameManager.instance.checkCollisions(id, idOfZombie, timeStamp);
+                    if(collided)
+                    {
+                        byte[] collisionData = new byte[10];
+                        Array.Copy(BitConverter.GetBytes('k'), 0, collisionData, 0, 2);
+                        Array.Copy(BitConverter.GetBytes(id), 0, collisionData, 2, 4);
+                        Array.Copy(BitConverter.GetBytes(idOfZombie),0, collisionData, 6, 4);
+                        ServerTCPSend.sendToAllTCPClients(collisionData);
+                    }
                     break;
 
             }
@@ -186,7 +196,7 @@ public class TCP
         try
         {
         int bytesSent = socket.EndSend(_result);
-        Debug.Log(string.Format("Sent {0} bytes to the client.", bytesSent));
+        //Debug.Log(string.Format("Sent {0} bytes to the client.", bytesSent));
         }catch(Exception _e)
         {
             Debug.Log(_e.ToString());

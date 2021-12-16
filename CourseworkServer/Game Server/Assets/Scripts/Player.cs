@@ -71,6 +71,10 @@ public class Player : MonoBehaviour
         lastSentMessages.Add(new Vector2(transform.position.x, transform.position.y));
         packetInterval = 1 / updatesPerSecond;
         packetTimer = 0;
+        for(int i = 0; i < ammoClip; i++)
+        {
+            bullets[i].idOfPlayer = _id;
+        }
     }
 
     public void Update()

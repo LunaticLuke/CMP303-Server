@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AIZombie
     - Bullet
     - GameManager
     - Player
@@ -21,7 +22,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -35,6 +35,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -69,6 +70,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2992}
     - Class: 114
+      Script: {instanceID: 3050}
+    - Class: 114
       Script: {instanceID: 3236}
     - Class: 114
       Script: {instanceID: 3350}
@@ -77,13 +80,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3820}
     - Class: 114
-      Script: {instanceID: 3954}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 4200}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4294}
+      Script: {instanceID: 4202}
     - Class: 114
-      Script: {instanceID: 4976}
+      Script: {instanceID: 4296}
+    - Class: 114
+      Script: {instanceID: 4978}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -393,7 +398,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 59b50a6b8347ba9287b7c9fdcb9cc60e
+      Hash: 633691126e13fd72e52f7d4f8b3cd318
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -429,6 +434,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 819137fa29cbd58bdbc1e39536513989
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AIZombie
+  - hash:
+      serializedVersion: 2
       Hash: da4cc51a02ce84afe2cecd27cfe6997a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -453,7 +464,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 3c8bff4b91cd88aed53d64e3123e43f9
+      Hash: 5b974556e655deeccfa1e7ab6fe0f1f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ServerManager
@@ -609,7 +620,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: a70263ba47e76dd17097b72a03b0984d
+      Hash: 8531f2b994f40aaea00ebad31500566d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -670,4 +681,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/lukes/OneDrive/Desktop/Game/Game Server.exe
+  playerPath: C:/Users/lukes/OneDrive/Desktop/Game Server/Game Server.exe

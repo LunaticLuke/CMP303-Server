@@ -34,18 +34,15 @@ public class Packet
     }
 
 
-    public static byte[] CreateZombieStruct()
+    public static byte[] CreateZombieStruct(ZombieStruct zombies)
     {
-        byte[] data = new byte[6 + (GameManager.instance.numberOfZombies * 8)];
+        byte[] data = new byte[18];
         Array.Copy(BitConverter.GetBytes('z'), 0, data, 0, 2);
-        Array.Copy(BitConverter.GetBytes(Server.instance.gameTime),0,data,2,4);
-        int index = 6;
-        for(int i = 0; i < GameManager.instance.numberOfZombies; i++)
-        {
-            Array.Copy(BitConverter.GetBytes(GameManager.instance.zombies[i].transform.position.x), 0, data, index, 4);
-            Array.Copy(BitConverter.GetBytes(GameManager.instance.zombies[i].transform.position.y), 0, data, index + 4, 4);
-            index += 8;
-        }
+        Array.Copy(BitConverter.GetBytes(zombies.indexOfZombie), 0, data, 2, 4);
+        Array.Copy(BitConverter.GetBytes(zombies.xPos), 0, data, 6, 4);
+        Array.Copy(BitConverter.GetBytes(zombies.yPos), 0, data, 10, 4);
+        Array.Copy(BitConverter.GetBytes(zombies.timestamp), 0, data, 14, 4);
+
         return data;
     }
 
@@ -68,5 +65,7 @@ public class Packet
 
         return data;
     }
+
+ 
 
 }
